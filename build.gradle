@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.amal'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.amal.Main'
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
